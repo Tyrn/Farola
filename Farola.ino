@@ -1,11 +1,13 @@
-// Display mode: 1 - I2C; 2 - 10-pin.
-#define _LCD_TYPE 1
-#include <LCD_1602_RUS_ALL.h>
-
 #define _TASK_SCHEDULING_OPTIONS
 // #define _TASK_TIMECRITICAL
 // #define _TASK_SLEEP_ON_IDLE_RUN
 #include <TaskScheduler.h>
+
+// Display mode: 1 - I2C; 2 - 10-pin.
+#define _LCD_TYPE 1
+#include <LCD_1602_RUS_ALL.h>
+
+#include <EasyButton.h>
 
 LCD_1602_RUS lcd(0x27, 16, 2);
 
