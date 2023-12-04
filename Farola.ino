@@ -30,7 +30,7 @@ Task tOrange(500, TASK_FOREVER, &tOrangeCallback);
 Task tCount(1000, TASK_FOREVER, &tCountCallback);
 
 Scheduler ts;
-STM32encoder enc(TIM2);https://foto-history.livejournal.com/19224811.html
+STM32encoder enc(TIM2);
 
 void setup() {
   String str;
