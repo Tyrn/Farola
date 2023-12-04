@@ -1,3 +1,5 @@
+#include <string>
+
 #define _TASK_SCHEDULING_OPTIONS
 // #define _TASK_TIMECRITICAL
 // #define _TASK_SLEEP_ON_IDLE_RUN
@@ -19,7 +21,7 @@ void tOrangeCallback() { digitalWrite(PB8, !digitalRead(PB8)); }
 void tCountCallback() {
   static int cnt = 1;
 
-  lcd.setCursor(0, 0);
+  lcd.setCursor(16 - std::to_string(cnt).length(), 1);
   lcd.print(cnt++, DEC);
 }
 
@@ -28,7 +30,7 @@ Task tOrange(500, TASK_FOREVER, &tOrangeCallback);
 Task tCount(1000, TASK_FOREVER, &tCountCallback);
 
 Scheduler ts;
-STM32encoder enc(TIM2);
+STM32encoder enc(TIM2);https://foto-history.livejournal.com/19224811.html
 
 void setup() {
   String str;
