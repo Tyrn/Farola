@@ -1,1 +1,1 @@
-# A lamp power supply controller
+# An arc lamp power supply controller
