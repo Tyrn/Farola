@@ -2,7 +2,9 @@
 ## Libraries
 
 By default, all the libraries are installed in the `~/Arduino/libraries`
-directory via the Arduino IDE Library Manager, as well as manually.
+directory via the
+[Arduino IDE](https://github.com/Tyrn/arch-chronicle/blob/master/Usage/Arduino.md)
+Library Manager, as well as manually.
 
 - *TaskScheduler* by Anatoli Arkhipenko
 - *LiquidCrystal_I2C* by Frank de Brabander
