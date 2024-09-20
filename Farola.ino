@@ -22,14 +22,32 @@ void tOrange1Callback() { digitalWrite(PB8, !digitalRead(PB8)); }
 
 void tOrange2Callback() { digitalWrite(PB9, !digitalRead(PB9)); }
 
+int unilen(const char *s) {
+  int len = 0;
+  while (*s)
+    len += (*s++ & 0xc0) != 0x80;
+  return len;
+}
+
 void tCountCallback() {
   static int cnt = 1;
+  static char label[] = "Счёт: ";
+  static int len0 = unilen(label);
 
-  lcd.setCursor(16 - String(cnt).length(), 1);
+  lcd.setCursor(16 - len0 - String(cnt).length(), 1);
+  lcd.print(label);
   lcd.print(cnt++, DEC);
 }
 
+void clearLCDLine(int line) {
+  lcd.setCursor(0, line);
+  for (int n = 0; n < 16; n++) {
+    lcd.print(" ");
+  }
+}
+
 void tEncoderCallback() {
+  clearLCDLine(0);
   lcd.setCursor(0, 0);
   lcd.print(prevPos, DEC);
 }
