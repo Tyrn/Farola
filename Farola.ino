@@ -47,9 +47,16 @@ void clearLCDLine(int line) {
 }
 
 void tEncoderCallback() {
-  clearLCDLine(0);
-  lcd.setCursor(0, 0);
-  lcd.print(prevPos, DEC);
+  static bool clean = true;
+  static int32_t pos = 0;
+
+  if (clean || pos != prevPos) {
+    clearLCDLine(0);
+    lcd.setCursor(0, 0);
+    lcd.print(prevPos, DEC);
+    clean = false;
+    pos = prevPos;
+  }
 }
 
 Task tEncoder(100, TASK_FOREVER, &tEncoderCallback);
