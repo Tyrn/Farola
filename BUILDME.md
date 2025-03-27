@@ -15,6 +15,12 @@ Library Manager, as well as manually.
 git clone https://github.com/Tyrn/LCD_1602_RUS_ALL ~/Arduino/libraries/LCD_1602_RUS_ALL
 ```
 
+or, if it's all yours
+
+```
+git clone git@github.com:Tyrn/LCD_1602_RUS_ALL.git ~/Arduino/libraries/LCD_1602_RUS_ALL
+```
+
 - _EasyButton_ by Evert Arias
 - _STM32encoder_ by bit.factory. In case of the Library Manager error, try
   [this](https://forum.arduino.cc/t/dependency-stm32-is-not-available/1195285)
